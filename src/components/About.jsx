@@ -25,17 +25,17 @@ const About = () => {
             <img src={sak} alt="Team Member 1" className="w-32 h-32 rounded-full mx-auto mb-4" />
 
               <h4 className="text-xl font-medium text-gray-800">Saksham Paudel</h4>
-              <p className="text-gray-500">Founder & CEO</p>
+              {/* <p className="text-gray-500">Founder & CEO</p> */}
             </div>
             <div className="bg-white p-6 rounded-lg shadow-lg text-center">
               <img src={richa} alt="Team Member 2" className="w-32 h-32 rounded-full mx-auto mb-4" />
               <h4 className="text-xl font-medium text-gray-800">Richa Lamichhane</h4>
-              <p className="text-gray-500">Operations Manager</p>
+              {/* <p className="text-gray-500">Operations Manager</p> */}
             </div>
             <div className="bg-white p-6 rounded-lg shadow-lg text-center">
               <img src={awan} alt="Team Member 3" className="w-32 h-32 rounded-full mx-auto mb-4" />
               <h4 className="text-xl font-medium text-gray-800">Awan karki</h4>
-              <p className="text-gray-500">Customer Support Lead</p>
+              {/* <p className="text-gray-500">Customer Support Lead</p> */}
             </div>
           </div>
         </div>

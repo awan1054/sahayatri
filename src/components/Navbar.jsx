@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Login from './Login';
+import { Link } from 'react-router-dom';
 
 function Navbar() {
   const [theme, setTheme] = useState(localStorage.getItem("theme") ? localStorage.getItem("theme") : "light");
@@ -35,7 +36,7 @@ function Navbar() {
   const navitems=(<>
    <li><a href="/">Home</a></li>
     
-    <li><a href="/Course">Course</a></li>
+    <li><a href="/Course">Bike List</a></li>
   
     <li><a href='/Contact'>Contact </a></li>
   
@@ -45,7 +46,7 @@ function Navbar() {
   )
   return (
     <div>
-      <div className={ `max-w-screen-2xl container mx-auto  md:px-20 px-4 dark:bg-slate-900 dark:text-white fixed top-0 left-0 right-0 ${
+      <div className={ `max-w-screen-2xl container mx-auto  md:px-20 px-4 dark:bg-slate-900 dark:text-white fixed top-0 left-0 right-0 z-50${
         sticky?"sticky-navbar shadow-md bg-base-200  dark:bg-base-600 dark:text-white duration-300 transition-all ease-in-out":""
       }`}>
       <div className="navbar ">
@@ -120,8 +121,7 @@ function Navbar() {
   </svg>
 </label>
   <div className="">
-    <a className="bg-black text-white px-2 py-3 rounded-md hover:bg-slate-800 duration-300 cursor-pointer" onClick={()=> document.getElementById("my_modal_3").showModal()}>Login</a>
-    <Login/>
+    <Link to='/login' className="bg-black text-white px-2 py-3 rounded-md hover:bg-slate-800 duration-300 cursor-pointer" onClick={()=> document.getElementById("my_modal_3").showModal()}>Login</Link>
   </div>
 </div>
    </div>

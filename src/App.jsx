@@ -5,7 +5,9 @@ import Courses from './Courses/Courses';
 import Signup from './components/Signup';
 import Contact from './components/Contact';
 import About from './components/About';
-
+import MyBike from './pages/my-bike/MyBike';
+import SingleBike from './pages/SingleBike/SingleBike';
+import Login from './components/Login';
 
 function App() {
   return (
@@ -17,10 +19,16 @@ function App() {
             path="/course"
             element={  <Courses />}
           />
+                <Route path="/login"
+            element={<Login/>} />
           <Route  path="/signup"
             element={ <Signup/>} />
+        
          <Route path="/Contact" element={<Contact />} />
          <Route path="/About" element={<About />} />
+        <Route path='/my-bikes' element={<MyBike />} />
+        <Route path='/bike/:id' element={<SingleBike />} />
+
 </Routes>
 </div>
     </>
