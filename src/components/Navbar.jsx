@@ -14,7 +14,7 @@ function Navbar() {
   )
   return (
     <div>
-      <div classname=" max-w-screen-2xl container mx-auto  md:px-20 px-4">
+      <div className=" max-w-screen-2xl container mx-auto  md:px-20 px-4">
       <div className="navbar bg-base-100">
   <div className="navbar-start">
     <div className="dropdown">
@@ -40,7 +40,7 @@ function Navbar() {
  
       </ul>
     </div >
-    <a className="btn btn-ghost text-xl">BIKE RENTAL</a>
+    <a className="btn btn-ghost text-xl pl-6">BIKE RENTAL</a>
   </div>
   <div  className="navbar-end space-x-7">
   <div className="navbar-center hidden lg:flex">
@@ -69,7 +69,7 @@ function Navbar() {
 
   {/* sun icon */}
   <svg
-    className="swap-off h-8 w-8 fill-current"
+    className="swap-off h-7 w-7 fill-current"
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 24 24">
     <path
@@ -78,7 +78,7 @@ function Navbar() {
 
   {/* moon icon */}
   <svg
-    className="swap-on h-8 w-8 fill-current"
+    className="swap-on h-7 w-7 fill-current"
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 24 24">
     <path
