@@ -40,11 +40,7 @@ function Navbar() {
  
       </ul>
     </div >
-<<<<<<< HEAD
-    <a className="btn btn-ghost text-xl">GHUMGHAM</a>
-=======
-    <a className="btn btn-ghost text-xl pl-6">BIKE RENTAL</a>
->>>>>>> 3069b0f (awan la gareko)
+  <a className="btn btn-ghost text-xl pl-6">BIKE RENTAL</a>
   </div>
   <div  className="navbar-end space-x-7">
   <div className="navbar-center hidden lg:flex">

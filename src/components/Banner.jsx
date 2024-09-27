@@ -1,5 +1,5 @@
 import React from 'react'
-
+import tvs2 from '../../public/images/tvs2.jpg';
 function Banner() {
   return (
     <>
@@ -25,7 +25,9 @@ function Banner() {
         </div>
         <button className="btn mt-6 btn-secondary">Secondary</button>
         </div>
-        <div className=' w-full md:w-1/2'>Right</div>
+        <div className=' w-full md:w-1/2'>
+        <img src={tvs2} alt="" />
+        </div>
         </div> 
     </>
   )
