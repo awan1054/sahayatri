@@ -1,16 +1,29 @@
-import React from 'react'
-import Navbar from './components/Navbar'
-import Banner from './components/Banner'
-import Hero from './components/hero'
+import React from 'react';
+import Home from './components/Home/Home';
+import { Route, Routes } from "react-router-dom";
+import Courses from './Courses/Courses';
+import Signup from './components/Signup';
+import Contact from './components/Contact';
+import About from './components/About';
+
 
 function App() {
   return (
-    <div>
-     <Navbar/>
-     <Banner/>
-    <Hero/>
-
-    </div>
+    <>
+    <div className='dark:bg-slate-900 dark:text-white'>
+<Routes>
+<Route path="/" element={<Home />} />
+<Route
+            path="/course"
+            element={  <Courses />}
+          />
+          <Route  path="/signup"
+            element={ <Signup/>} />
+         <Route path="/Contact" element={<Contact />} />
+         <Route path="/About" element={<About />} />
+</Routes>
+</div>
+    </>
   )
 }
 

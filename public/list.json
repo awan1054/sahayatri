@@ -1,0 +1,77 @@
+[
+    {
+        "id":1,
+        "name":"Honda shine",
+        "title":"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias odit, aliquam magnam tempore totam mollitia blanditiis aliquid modi, facere suscipit quibusdam voluptate, perspiciatis nulla inventore vel. Totam aperiam amet fugiat.",
+        "price":500,
+        "category":"bike",
+        "image":"https://img.freepik.com/free-photo/view-cool-motorcycle_23-2150704781.jpg?t=st=1727624735~exp=1727628335~hmac=7ced33ae2edacfe9569fbaa650073fe19c7de4611a5f5d6f08fcd626498dcd0c&w=900"
+
+    },
+    {
+        "id":2,
+        "name":"Bullet",
+        "title":"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias odit, aliquam magnam tempore totam mollitia blanditiis aliquid modi, facere suscipit quibusdam voluptate, perspiciatis nulla inventore vel. Totam aperiam amet fugiat.",
+        "price":1000,
+        "category":"bike",
+        "image":"https://img.freepik.com/free-photo/view-cool-motorcycle_23-2150704781.jpg?t=st=1727624735~exp=1727628335~hmac=7ced33ae2edacfe9569fbaa650073fe19c7de4611a5f5d6f08fcd626498dcd0c&w=900"
+
+    },
+    {
+        "id":3,
+        "name":"Dirt",
+        "title":"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias odit, aliquam magnam tempore totam mollitia blanditiis aliquid modi, facere suscipit quibusdam voluptate, perspiciatis nulla inventore vel. Totam aperiam amet fugiat.",
+        "price":500,
+        "category":"bike",
+        "image":"https://img.freepik.com/free-photo/view-cool-motorcycle_23-2150704781.jpg?t=st=1727624735~exp=1727628335~hmac=7ced33ae2edacfe9569fbaa650073fe19c7de4611a5f5d6f08fcd626498dcd0c&w=900"
+
+    },
+    {
+        "id":4,
+        "name":"NS",
+        "title":"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias odit, aliquam magnam tempore totam mollitia blanditiis aliquid modi, facere suscipit quibusdam voluptate, perspiciatis nulla inventore vel. Totam aperiam amet fugiat.",
+        "price":500,
+        "category":"bike",
+        "image":"https://img.freepik.com/free-photo/view-cool-motorcycle_23-2150704781.jpg?t=st=1727624735~exp=1727628335~hmac=7ced33ae2edacfe9569fbaa650073fe19c7de4611a5f5d6f08fcd626498dcd0c&w=900"
+
+    }, {
+        "id":5,
+        "name":"pulsar",
+        "title":"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias odit, aliquam magnam tempore totam mollitia blanditiis aliquid modi, facere suscipit quibusdam voluptate, perspiciatis nulla inventore vel. Totam aperiam amet fugiat.",
+        "price":500,
+        "category":"bike",
+        "image":"https://img.freepik.com/free-photo/view-cool-motorcycle_23-2150704781.jpg?t=st=1727624735~exp=1727628335~hmac=7ced33ae2edacfe9569fbaa650073fe19c7de4611a5f5d6f08fcd626498dcd0c&w=900"
+
+    }, {
+        "id":6,
+        "name":"fz",
+        "title":"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias odit, aliquam magnam tempore totam mollitia blanditiis aliquid modi, facere suscipit quibusdam voluptate, perspiciatis nulla inventore vel. Totam aperiam amet fugiat.",
+        "price":500,
+        "category":"bike",
+        "image":"https://img.freepik.com/free-photo/view-cool-motorcycle_23-2150704781.jpg?t=st=1727624735~exp=1727628335~hmac=7ced33ae2edacfe9569fbaa650073fe19c7de4611a5f5d6f08fcd626498dcd0c&w=900"
+
+    }, {
+        "id":7,
+        "name":"ntorq",
+        "title":"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias odit, aliquam magnam tempore totam mollitia blanditiis aliquid modi, facere suscipit quibusdam voluptate, perspiciatis nulla inventore vel. Totam aperiam amet fugiat.",
+        "price":500,
+        "category":"scooty",
+        "image":"https://img.freepik.com/free-photo/view-cool-motorcycle_23-2150704781.jpg?t=st=1727624735~exp=1727628335~hmac=7ced33ae2edacfe9569fbaa650073fe19c7de4611a5f5d6f08fcd626498dcd0c&w=900"
+
+    }, {
+        "id":8,
+        "name":"Dio",
+        "title":"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias odit, aliquam magnam tempore totam mollitia blanditiis aliquid modi, facere suscipit quibusdam voluptate, perspiciatis nulla inventore vel. Totam aperiam amet fugiat.",
+        "price":500,"category":"scooty",
+        "image":"https://img.freepik.com/free-photo/view-cool-motorcycle_23-2150704781.jpg?t=st=1727624735~exp=1727628335~hmac=7ced33ae2edacfe9569fbaa650073fe19c7de4611a5f5d6f08fcd626498dcd0c&w=900"
+
+    }, {
+        "id":9,
+        "name":"vespa",
+        "title":"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias odit, aliquam magnam tempore totam mollitia blanditiis aliquid modi, facere suscipit quibusdam voluptate, perspiciatis nulla inventore vel. Totam aperiam amet fugiat.",
+        "price":500,
+        "category":"scooty",
+        "image":"https://img.freepik.com/free-photo/view-cool-motorcycle_23-2150704781.jpg?t=st=1727624735~exp=1727628335~hmac=7ced33ae2edacfe9569fbaa650073fe19c7de4611a5f5d6f08fcd626498dcd0c&w=900"
+
+    }
+]

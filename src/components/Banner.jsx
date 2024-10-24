@@ -1,10 +1,10 @@
 import React from 'react'
-import tvs2 from '../../public/images/tvs2.jpg';
+import dominar from '../../public/images/dominar.jpg';
 function Banner() {
   return (
     <>
-     <div className=" max-w-screen-2xl container mx-auto md:px-20 px-4 flex flex-col md:flex-row">
-        <div className=' w-full md:w-1/2 mt-12 md:mt-32 '> 
+     <div className=" max-w-screen-2xl container mx-auto md:px-20 px-4 flex flex-col md:flex-row my-10">
+        <div className=' order-2 w-full md:order-1 md:w-1/2 mt-12 md:mt-32 '> 
         <div className='space-y-12'>
         <h1 className='text-4xl font-bold'> hello,wellcome to our bike rental system</h1>
         <p className='text-xl'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias odit, aliquam magnam tempore totam mollitia blanditiis aliquid modi, facere suscipit quibusdam voluptate, perspiciatis nulla inventore vel. Totam aperiam amet fugiat.</p>
@@ -25,8 +25,8 @@ function Banner() {
         </div>
         <button className="btn mt-6 btn-secondary">Secondary</button>
         </div>
-        <div className=' w-full md:w-1/2'>
-        <img src={tvs2} alt="" />
+        <div className='order-1 w-full md:w-1/2'>
+        <img src={dominar} className='w-70   h-80' alt="" />
         </div>
         </div> 
     </>
