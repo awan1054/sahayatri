@@ -3,6 +3,7 @@ import Navbar from '../Navbar'
 import Banner from '../Banner'
 import Sample from '../Sample'
 import Footer from '../Footer'
+import Video from './Video'
 
 
 const Home = () => {
@@ -11,6 +12,7 @@ const Home = () => {
    <Navbar/>
      <Banner/>
     <Sample />
+    <Video/>
     <Footer/>
     </>
   )

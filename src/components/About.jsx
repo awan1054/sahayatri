@@ -6,7 +6,6 @@ import sak from '../../public/images/sak.jpg';
 import richa from '../../public/images/richa.jpg';
 import awan from '../../public/images/awan.jpg';
 
-
 const About = () => {
   return (
     <>
@@ -15,11 +14,12 @@ const About = () => {
       <div className="container mx-auto text-center px-6">
         <h2 className="text-4xl font-bold mb-6 text-gray-800">About Us</h2>
         <p className="text-lg text-gray-600 mb-12">
-          At [Bike Rental Co.], we offer easy, eco-friendly bike rentals for your city adventures or countryside getaways. Ride with us for a hassle-free experience!
+          At Sahayatri, we offer easy, eco-friendly bike rentals for your city adventures or countryside getaways. Ride with us for a hassle-free experience!
         </p>
 
         <div className="mb-12">
-          <h3 className="text-2xl font-semibold mb-6 text-gray-800">Meet Our Team</h3>
+          <h3 className="text-2xl font-semibold mb-6 text-gray-800">Meet the faces behind Sahayatri</h3>
+         <p className='text-1xl text-gray-800 '> Our team is a group of dedicated cycling enthusiasts committed to bringing you the best rental experience.</p>
           <div className="flex flex-wrap justify-center gap-10">
             <div className="bg-white p-6 rounded-lg shadow-lg text-center">
             <img src={sak} alt="Team Member 1" className="w-32 h-32 rounded-full mx-auto mb-4" />

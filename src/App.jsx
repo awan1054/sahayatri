@@ -8,6 +8,10 @@ import About from './components/About';
 import MyBike from './pages/my-bike/MyBike';
 import SingleBike from './pages/SingleBike/SingleBike';
 import Login from './components/Login';
+import Became from './components/Became';
+import Booknow from './pages/Booknow/Booknow';
+import Forgot from './components/forgot/Forgot';
+import Reset from './components/forgot/Reset';
 
 function App() {
   return (
@@ -28,6 +32,13 @@ function App() {
          <Route path="/About" element={<About />} />
         <Route path='/my-bikes' element={<MyBike />} />
         <Route path='/bike/:id' element={<SingleBike />} />
+        <Route path='/became' element={<Became/>} />
+        <Route path='/booknow/:id' element={<Booknow/>} />
+        <Route path='/forgot' element={<Forgot/>} />
+        <Route path='/reset' element={<Reset/>} />
+        
+
+
 
 </Routes>
 </div>

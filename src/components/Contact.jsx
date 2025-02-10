@@ -2,47 +2,54 @@
 import React, { useState } from 'react';
 import Navbar from './Navbar';
 import Footer from './Footer';
+import axios from 'axios';
+import { Navigate, useNavigate } from 'react-router-dom';
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
-  });
-
-  const [submitted, setSubmitted] = useState(false);
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value
-    });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log('Form data submitted:', formData);
-    setSubmitted(true);
-    // You can handle API calls here
-  };
+  const[name,setName]=useState("")
+  const[email,setEmail]=useState("")
+  const [message,setMessage]=useState("")
+  const navigate = useNavigate();
+  const contactus=async(e)=>{
+    e.preventDefault()
+   const response=await axios.post("http://localhost:3000/contact/contactus",{
+     name,
+     email,
+     message
+    },
+    {
+      headers:{
+        "Authorization" : localStorage.getItem("token")
+      }
+    })
+  
+  
+    if (response.status === 200) {
+      setTimeout(() => {
+          alert("Message sent successfully!");
+      }, 0); // Show message immediately
+      navigate("/"); // Navigate without waiting for user to click "OK"
+  }
+  
+  
+  else{
+    alert("something went wrong")
+  }
+  }
 
   return (
     <>
     <Navbar/>
     <div className="bg-gray-100 p-8 rounded-lg shadow-lg max-w-md mx-auto mt-20">
-      <h2 className="text-2xl font-bold mb-6 text-center">Contact Us</h2>
-      {submitted ? (
-        <div className="text-green-600 text-center">Thank you for contacting us! We will get back to you soon.</div>
-      ) : (
-        <form onSubmit={handleSubmit}>
+      <h2 className="text-2xl font-bold mb-6 text-center"> Feel Free to Contact Us</h2>
+
+        <form onSubmit={contactus}>
           <div className="mb-4">
             <label className="block text-gray-700 font-semibold mb-2">Name:</label>
             <input
               type="text"
-              name="name"
-              value={formData.name}
-              onChange={handleChange}
+              name="Name"
+              onChange={(e)=>setName(e.target.value)}
               required
               className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500"
             />
@@ -52,8 +59,8 @@ const Contact = () => {
             <input
               type="email"
               name="email"
-              value={formData.email}
-              onChange={handleChange}
+             
+              onChange={(e)=>setEmail(e.target.value)}
               required
               className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500"
             />
@@ -62,8 +69,8 @@ const Contact = () => {
             <label className="block text-gray-700 font-semibold mb-2">Message:</label>
             <textarea
               name="message"
-              value={formData.message}
-              onChange={handleChange}
+             
+              onChange={(e)=>setMessage(e.target.value)}
               required
               className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500"
             ></textarea>
@@ -75,7 +82,7 @@ const Contact = () => {
             Submit
           </button>
         </form>
-      )}
+      
     </div>
     <Footer/>
     </>

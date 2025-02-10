@@ -1,73 +1,86 @@
 import React, { useState } from 'react';
-import {Link, useNavigate} from "react-router-dom";
-import { useForm } from "react-hook-form";
+import { Link, useNavigate } from "react-router-dom";
 import axios from 'axios';
 
 const Login = () => {
+  const navigate = useNavigate();
+  const [data, setData] = useState({
+    email: "",
+    password: ""
+  });
 
-  const navigate = useNavigate()
-const [data,setData] = useState({
-  email : "", 
-  password : ""
-})
-const handleChange = (e)=>{
-  const {name,value } = e.target 
-  setData({
-    ...data, 
-    [name] : value
-  })
-}
-const handleSubmit = async(e)=>{
-  e.preventDefault()
-  const response = await axios.post("http://localhost:3000/user/login",data)
-  if(response.status === 200){
-    alert("Logged in successfully")
-    navigate("/")
-  }else{
-    alert("Something went wrong")
-  }
-}
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setData({
+      ...data,
+      [name]: value
+    });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const response = await axios.post("http://localhost:3000/user/login", data);
+    if (response.status === 200) {
+      localStorage.setItem("token", response.data.token);
+      alert("Logged in successfully");
+      navigate("/home");
+    } else {
+      alert("Something went wrong");
+    }
+  };
+
   return (
-    <div>
-      
-  <div className="modal-box">
-
-    <h3 className="font-bold text-lg">Login</h3>
-    {/* Email */}
- <form onSubmit={handleSubmit}>
- <div className='mt-4 space-y-2'>
-        <span>Email</span>
-        <br/>
-        <input type="email"
-         placeholder="Enter  your email" 
-         name='email'
-         className='w-80 px-3 py-1 border rounded-md outline-none'
-         onChange={handleChange}
-         ></input> 
-         <br/>
-    </div>
-    {/* password */}
-    <div className='mt-4 space-y-2'>
-        <span>Password</span>
-        <br/>
-        <input type="text"
-         placeholder="Enter  your password" 
-         name='password'
-         className='w-80 px-3 py-1 border rounded-md outline-none'
-         onChange={handleChange}
-         ></input> 
-         <br/>
-    </div>
-
-    {/* button */}
-    <div className='flex justify-around mt-4'>
-        <button className='bg-pink-500 text-white rounded-md px-3 py-1 hover:bg-pink-700 duration-200 '>Login</button>
-        <p>Not registerd ? {" "}
-        <Link to="/signup" className='underline text-blue-500 cursor-pointer'>Signup</Link></p>
-    </div>
- </form>
-  </div>
-
+    <div className="flex justify-center items-center min-h-screen bg-gray-100">
+      <div className="bg-white shadow-md rounded-lg p-8 w-[400px]">
+        <h3 className="font-bold text-xl text-center">Login</h3>
+        {/* Email */}
+        <form onSubmit={handleSubmit}>
+          <div className="mt-6">
+            <label className="block text-sm font-medium text-gray-700">Email</label>
+            <input
+              type="email"
+              placeholder="Enter your email"
+              name="email"
+              className="w-full px-3 py-2 border rounded-md outline-none focus:ring-2 focus:ring-blue-500"
+              onChange={handleChange}
+            />
+          </div>
+          {/* Password */}
+          <div className="mt-4">
+            <label className="block text-sm font-medium text-gray-700">Password</label>
+            <input
+              type="password"
+              placeholder="Enter your password"
+              name="password"
+              className="w-full px-3 py-2 border rounded-md outline-none focus:ring-2 focus:ring-blue-500"
+              onChange={handleChange}
+            />
+          </div>
+          {/* Button */}
+          <div className="mt-6">
+            <button
+              type="submit"
+              className="w-full bg-blue-500 text-white py-2 rounded-md hover:bg-blue-700 transition duration-200"
+            >
+              Login
+            </button>
+          </div>
+          {/* Links */}
+          <div className="mt-4 text-center">
+            <p className="text-sm">
+              Not registered?{" "}
+              <Link to="/signup" className="underline text-blue-500">
+                Signup
+              </Link>
+            </p>
+            <p className="text-sm">
+              <Link to="/forgot" className="underline text-blue-500">
+                Forgot Password?
+              </Link>
+            </p>
+          </div>
+        </form>
+      </div>
     </div>
   )
 }
