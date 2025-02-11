@@ -1,13 +1,28 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import list from "../../public/list.json"
 import Cards from './Cards';
+import axios from 'axios';
 
 
 const Sample = () => {
-    const filterData=list.filter((data)=>data.category === "bike");
+  const [bikes,setBikes]=useState([])
+  const fetchBike= async()=>{
+  const response=await axios.get("http://localhost:3000/bike/get-bikes")
+  if(response.status==200){
+      setBikes(response.data.data)
+  
+  }
+  else{
+      alert("something wrong")
+  }
+  }
+  useEffect(()=>{
+    fetchBike()
+},[])
+   
     var settings = {
       dots: true,
       infinite: false,
@@ -52,10 +67,10 @@ const Sample = () => {
     </div>
     <div>
     <Slider {...settings}>
-        {filterData.map((item)=>
-        (
-          <Cards item={item} key={item.id}/>
-        ))}
+    {
+     bikes.length > 0 && bikes.map((bike)=>
+        <Cards key={bike._id} bike={bike}/> )
+      }
       </Slider>
     </div>
     </div>

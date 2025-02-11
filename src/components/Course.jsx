@@ -1,9 +1,26 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Cards from './Cards'
 import list from "../../public/list.json"
 import { Link } from 'react-router-dom'
+import axios from 'axios'
 
 const Course = () => {
+    const [bikes,setBikes]=useState([])
+    const fetchBike= async()=>{
+    const response=await axios.get("http://localhost:3000/bike/get-bikes")
+    if(response.status==200){
+        setBikes(response.data.data)
+    
+    }
+    else{
+        alert("something wrong")
+    }
+    }
+    useEffect(()=>{
+      fetchBike()
+  },[])
+  const [searchTerm,setSearchTerm] = useState("") // torq
+  const filteredBikes = bikes.filter((bike)=>bike.name.toLowerCase().includes(searchTerm.toLowerCase()) || bike.price == parseInt(searchTerm) || bike.category.toLowerCase().includes(searchTerm.toLowerCase()))
   return (
   <>
   <div className='max-w-screen-2xl container mx-auto  md:px-20 px-4'>
@@ -24,6 +41,7 @@ const Course = () => {
       type="text"
       className="grow outline-none dark:bg-slate-900 dark:text-white py-1 px-2 text-sm"
       placeholder="Search"
+      onChange={(e)=>setSearchTerm(e.target.value)}
     />
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -42,8 +60,8 @@ const Course = () => {
 
     <div className='mt-12 grid grid-cols-1 md:grid-cols-4'>
       {
-        list.map((item)=>
-        <Cards key={item.id} item={item}/> )
+        filteredBikes.length > 0 && filteredBikes.map((bike)=>
+        <Cards key={bike._id} bike={bike}/> )
       }
     </div>
      

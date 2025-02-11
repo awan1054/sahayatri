@@ -8,6 +8,7 @@ const Login = () => {
     email: "",
     password: ""
   });
+  const [error, setError] = useState(""); // State for error message
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -19,13 +20,16 @@ const Login = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const response = await axios.post("http://localhost:3000/user/login", data);
-    if (response.status === 200) {
-      localStorage.setItem("token", response.data.token);
-      alert("Logged in successfully");
-      navigate("/home");
-    } else {
-      alert("Something went wrong");
+    try {
+      const response = await axios.post("http://localhost:3000/user/login", data);
+      if (response.status === 200) {
+        localStorage.setItem("token", response.data.token);
+      
+        navigate("/");
+      }
+    } catch (err) {
+      // Set error message on login failure
+      setError("Incorrect email or password");
     }
   };
 
@@ -33,8 +37,8 @@ const Login = () => {
     <div className="flex justify-center items-center min-h-screen bg-gray-100">
       <div className="bg-white shadow-md rounded-lg p-8 w-[400px]">
         <h3 className="font-bold text-xl text-center">Login</h3>
-        {/* Email */}
         <form onSubmit={handleSubmit}>
+          {/* Email */}
           <div className="mt-6">
             <label className="block text-sm font-medium text-gray-700">Email</label>
             <input
@@ -56,6 +60,14 @@ const Login = () => {
               onChange={handleChange}
             />
           </div>
+
+          {/* Error Message */}
+          {error && (
+            <div className="mt-4 text-red-600 text-sm text-center">
+              {error}
+            </div>
+          )}
+
           {/* Button */}
           <div className="mt-6">
             <button
@@ -65,6 +77,7 @@ const Login = () => {
               Login
             </button>
           </div>
+
           {/* Links */}
           <div className="mt-4 text-center">
             <p className="text-sm">
@@ -82,7 +95,7 @@ const Login = () => {
         </form>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Login
+export default Login;
