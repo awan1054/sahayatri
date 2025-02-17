@@ -1,7 +1,7 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Navbar from "../../components/Navbar";
 import axios from "axios";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 function Booknow() {
   const [citizenship, setCitizenship] = useState(null);
@@ -10,12 +10,31 @@ function Booknow() {
   const [location, setLocation] = useState("");
   const [email, setEmail] = useState("");
   const [Name, setName] = useState("");
+  const[payment,setpayment]=useState("")
+  const[bike,setBike]=useState("");
   const { id } = useParams();
+    const navigate = useNavigate();
+    const [totalamount,settotalamount]=useState(0)
+    const fetchsingle= async()=>{
+      const response=await axios.get("http://localhost:3000/bike/get-single/"+id)
+      if(response.status===200){
+          setBike(response.data.data)
+          settotalamount(response.data.data.price)
+      
+      }
+      else{
+          alert("something wrong")
+      }
+  }
+      useEffect(()=>{
+          fetchsingle()
+      },[])
+    
 
   const Booknow = async (e) => {
     e.preventDefault();
     const data = {
-      citizenship,location,contactNumber,email,Name,bike:id,licence
+      citizenship,location,contactNumber,email,Name,bike:id,licence,paymentmethod:payment,totalamount
     }
 
    
@@ -29,6 +48,9 @@ function Booknow() {
 
       if (response.status === 200) {
         alert("Booked successfully");
+        window.location.href = response.data.url
+        // navigate("/")
+
       } else {
         alert("Something went wrong");
       }
@@ -51,6 +73,7 @@ function Booknow() {
       setLicense(file);
     }
   };
+
 
   return (
     <>
@@ -104,6 +127,16 @@ function Booknow() {
                   onChange={(e) => setEmail(e.target.value)}
                 />
               </label>
+              <label className="w-1/2">
+                Total amount:
+                <input
+                  type="text"
+                  name="amount"
+                  className="mt-1 block w-full rounded-md border border-slate-300 bg-white px-3 py-4 placeholder-slate-400 shadow-sm placeholder:font-semibold placeholder:text-gray-500 focus:border-sky-500 focus:outline-none focus:ring-1 focus:ring-sky-500 sm:text-sm"
+                  value={bike.price}
+                 
+                />
+                </label>
             </div>
 
             <div className="flex flex-wrap gap-6 mt-6">
@@ -126,6 +159,43 @@ function Booknow() {
                   onChange={handleChange}
                 />
               </label>
+            
+              <div
+  class="w-[300px] mx-auto px-4 py-5 bg-white flex flex-col gap-3 rounded-md shadow-[0px_0px_15px_rgba(0,0,0,0.09)]"
+>
+  <legend class="text-xl font-semibold mb-3 select-none">Choose One</legend>
+  <label
+    for="cod"
+    name="status"
+    class="font-medium h-14 relative hover:bg-zinc-100 flex items-center px-3 gap-3 rounded-lg has-[:checked]:text-blue-500 has-[:checked]:bg-blue-50 has-[:checked]:ring-blue-300 has-[:checked]:ring-1 select-none"
+  >
+    <div class="w-5 fill-blue-500">
+    </div>
+   COD
+    <input
+      checked=""
+      type="radio" value='cod'
+      name="status"
+      class="peer/html w-4 h-4 absolute accent-current right-3"
+      id="html"  onChange={(e) => setpayment(e.target.value)}
+    />
+  </label>
+  <label
+    for="paymentintegration"
+    class="font-medium h-14 relative hover:bg-zinc-100 flex items-center px-3 gap-3 rounded-lg has-[:checked]:text-blue-500 has-[:checked]:bg-blue-50 has-[:checked]:ring-blue-300 has-[:checked]:ring-1 select-none"
+  >
+    <div class="w-5">
+    </div>
+   Payment with Khalti
+    <input
+      type="radio"
+      name="status" value='khalti'
+      
+      class="w-4 h-4 absolute accent-current right-3"
+      id="css"  onChange={(e) => setpayment(e.target.value)}
+    />
+  </label>
+</div>
             </div>
 
             <div className="text-center">

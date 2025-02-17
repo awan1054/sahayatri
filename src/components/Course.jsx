@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Cards from './Cards'
-import list from "../../public/list.json"
+
 import { Link } from 'react-router-dom'
 import axios from 'axios'
 
@@ -26,10 +26,10 @@ const Course = () => {
   <div className='max-w-screen-2xl container mx-auto  md:px-20 px-4'>
     <div className='mt-28 items-center justify-center text-center'>
       <h1 className='text-2xl font-semibold md:text-4xl'>
-        we're delighted to have you <span className='text-pink-500'> Here!:)</span>
+      Your Ultimate Bike Rental Companion! 
       </h1>
       <p className='mt-12 '>
-      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias odit, aliquam magnam tempore totam mollitia blanditiis aliquid modi, facere suscipit quibusdam voluptate, perspiciatis nulla inventore vel. Totam aperiam amet fugiat.rent the bike
+      We are here to make your journey simple, convenient, and reliable. With Sahayatri, you can easily find nearby bikes, book them effortlessly, and ride safely. Our platform ensures fast service, affordable pricing, and a user-friendly experience. Rent a bike today and start your journey with freedom! 
       </p>
       <Link to="/">
       <button className='mt-6 bg-pink-500 text-white px-4 py-2 rounded-md hover:bg-pink-700  duration-300 '>Back</button>

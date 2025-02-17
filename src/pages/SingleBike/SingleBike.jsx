@@ -48,7 +48,7 @@ function SingleBike(){
         <div className="flex mb-4">
           <div className="mr-4">
             <span className="font-bold text-gray-700 dark:text-gray-300">Price: Rs </span>
-            <span className="text-gray-600 dark:text-gray-300">{bike.price}</span>
+            <span className="text-gray-600 dark:text-gray-300">{bike.price}/day</span>
           </div>
           
         </div>

@@ -12,6 +12,7 @@ import Became from './components/Became';
 import Booknow from './pages/Booknow/Booknow';
 import Forgot from './components/forgot/Forgot';
 import Reset from './components/forgot/Reset';
+import History from './components/History';
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
         <Route path='/booknow/:id' element={<Booknow/>} />
         <Route path='/forgot' element={<Forgot/>} />
         <Route path='/reset' element={<Reset/>} />
+        <Route path='/history' element={<History/>} />
         
 
 

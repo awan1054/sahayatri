@@ -172,7 +172,7 @@
 // export default Navbar;
 
 
-import { Torus } from "lucide-react";
+
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
@@ -231,13 +231,16 @@ const logout = ()=>{
         <a href="/Course"> Bikes</a>
       </li>
       <li>
-        <a href="/Contact">Contact</a>
+        <a href="/Contact">ContactUs</a>
       </li>
       <li>
         <a href="/About">About</a>
       </li>
       <li>
         <a href="/became">Become Provider</a>
+      </li>
+      <li>
+        <a href="/history">My history</a>
       </li>
     </>
   );
