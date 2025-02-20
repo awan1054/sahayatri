@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Navbar from './Navbar'
 import Footer from './Footer'
 import axios from 'axios'
-import { useParams } from 'react-router-dom'
+
 
 const History = () => {
     
@@ -40,7 +40,7 @@ const History = () => {
         <tr className="border-b">
           <th className="text-left p-3 px-5">Vechicles</th>
           <th className="text-left p-3 px-5">Price</th>
-          <th className="text-left p-3 px-5">Time</th>
+          <th className="text-left p-3 px-5">Email</th>
           <th className="text-left p-3 px-5">Payment</th>
           <th />
         </tr>

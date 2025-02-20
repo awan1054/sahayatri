@@ -231,7 +231,7 @@ const logout = ()=>{
         <a href="/Course"> Bikes</a>
       </li>
       <li>
-        <a href="/Contact">ContactUs</a>
+        <a href="/Contact">Contact Us</a>
       </li>
       <li>
         <a href="/About">About</a>
@@ -239,9 +239,10 @@ const logout = ()=>{
       <li>
         <a href="/became">Become Provider</a>
       </li>
-      <li>
-        <a href="/history">My history</a>
-      </li>
+      {isLoggedIn&& <li>
+        <a href="/history">Booking history</a>
+      </li>}
+     
     </>
   );
 
@@ -284,7 +285,7 @@ const logout = ()=>{
                 {navitems}
               </ul>
             </div>
-            <a className="btn btn-ghost text-xl pl-6">SAHAYATRI</a>
+            <Link to='/'><a className="btn btn-ghost text-xl pl-6">SAHAYATRI</a></Link>
           </div>
           <div className="navbar-end space-x-7">
             <div className="navbar-center hidden lg:flex">

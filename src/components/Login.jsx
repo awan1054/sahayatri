@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from "react-router-dom";
 import axios from 'axios';
+import { Eye, EyeOff } from 'lucide-react'; // Eye icon import
 
 const Login = () => {
   const navigate = useNavigate();
@@ -9,6 +10,7 @@ const Login = () => {
     password: ""
   });
   const [error, setError] = useState(""); // State for error message
+  const [showPassword, setShowPassword] = useState(false); // State to toggle password visibility
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -48,16 +50,25 @@ const Login = () => {
               onChange={handleChange}
             />
           </div>
+
           {/* Password */}
-          <div className="mt-4">
+          <div className="mt-4 relative">
             <label className="block text-sm font-medium text-gray-700">Password</label>
             <input
-              type="password"
+              type={showPassword ? "text" : "password"} // Toggle input type
               placeholder="Enter your password"
               name="password"
-              className="w-full px-3 py-2 border rounded-md outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full px-3 py-2 border rounded-md outline-none focus:ring-2 focus:ring-blue-500 pr-10"
               onChange={handleChange}
             />
+            {/* Eye Icon Button */}
+            <button
+              type="button"
+              className="absolute right-3 top-9 text-gray-600"
+              onClick={() => setShowPassword(!showPassword)} // Toggle the state
+            >
+              {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
+            </button>
           </div>
 
           {/* Error Message */}
